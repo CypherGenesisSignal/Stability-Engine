@@ -1,140 +1,143 @@
-# The Stability Engine
+# Stability Engine
 
 Multi-agent runtime constraint framework for structural integrity, invariant enforcement, and controlled execution.
 
-## Introduction
+## Project Status
 
-Stability Engine is a deterministic runtime-constraint framework designed to enforce structural integrity, invariant boundaries, and controlled agent behavior within multi-agent AI systems. The engine provides a governed execution envelope using geometry-aligned gating, invariant interposition, refusal logic, and stability metrics.
+Stability Engine is a deterministic runtime-constraint architecture for multi-agent AI systems. It governs the environment agents operate within rather than tuning agent behavior. Its core concern is preserving structural continuity across identity, capability, memory, geometry, and execution.
 
-Version 4.0 introduces a hardened Control Plane, one-way invariant enforcement, and a complete operational demo that showcases runtime behavior under adversarial and boundary-pressure scenarios.
+The current public implementation line is:
 
-Stability Engine is the evolutionary successor to the early Sentinel Vector architecture and formalizes a physics-style constraint layer for autonomous agent environments. The engine defines four core runtime modules:
+- **v4.0** — contract-defined architecture and runnable demo baseline
+- **v4.1** — hostile-audited implementation scaffold with critical runtime-path remediation
+- **v4.2** — focused Integrity Unit holonomic drift-correction increment in progress
+- **v5.0** — planned larger consolidation release
 
-- Geometry Co-Processor
-- Invariant Interposer
-- Control Plane
-- Stability Metrics
+The current repository posture is best described as:
 
-These modules operate in a deterministic chain with explicit refusal paths, clamp behavior, and invariant enforcement. Included with this release is a fully runnable Python demo demonstrating event generation, boundary violations, cooldown sequencing, and logged evidence of runtime decisions.
+**Structurally consistent implementation scaffold with cooperative enforcement boundaries.**
 
-This project focuses on correctness, determinism, and reproducibility. It is not an alignment layer, a semantic evaluator, or a behavioral optimizer. All governance is structural.
+This is more than a proof of concept, but it is not production-ready, adversarially hardened, cryptographically enforced, or hardware-isolated.
 
-## Architecture Overview
+See [VERSION_HISTORY.md](VERSION_HISTORY.md) for the release lineage.
 
-The Stability Engine demo is organized around four primary runtime modules:
+## Architecture
+
+Stability Engine defines four primary runtime layers:
 
 - **Geometry Co-Processor**  
-  Structural coherence, curvature logic, and deterministic constraint evaluation
+  Structural coherence, topology, deterministic constraint evaluation, and safe manifold resolution.
 
 - **Invariant Interposer**  
-  One-way enforcement boundary for identity, memory, capability, and geometry protection
+  Non-bypassable enforcement boundary for identity, memory tiers, capability envelopes, and geometry access.
 
 - **Control Plane**  
-  Authorized task routing, cooldown handling, and recovery coordination
+  Deterministic task routing, cooldown handling, recovery coordination, and orchestration under Interposer authority.
 
 - **Stability Metrics**  
-  Drift, torsion, and boundary-pressure evaluation
+  Drift, torsion, continuity, synergy, and boundary-pressure evaluation.
 
-Supporting runtime layers in this demo include:
+Three operational units are specified within the architecture:
 
-- **TSRL-1** for observation
-- **TSRL-2** for routing and attribution
-- **TSRL-3** for recursive stability
-- **Purple Orchestrator** for cross-component coordination during demo execution
+- **AdSim Unit** — applies controlled adversarial pressure
+- **Defense Unit** — enforces safe recovery and containment
+- **Integrity Unit** — validates invariant health, continuity authenticity, and structural correctness
 
-This release includes runnable mock adapters for collaborator-pending components, a simulation entrypoint, audit logging, and tests covering refusals, memory boundaries, traceability, and runtime enforcement.
+The v4.2 line begins moving the Integrity Unit from specification into runnable prototype code.
 
-## Folder Structure
+## Supporting Runtime Layers
 
-```
-sentinel_vector_demo/
-├── README.md
-├── adapters/
-│   ├── __init__.py
-│   ├── geometry_coprocessor.py
-│   ├── persistent_memory.py
-│   └── presence_engine.py
-├── core/
-│   ├── __init__.py
-│   ├── audit_log.py
-│   ├── control_plane.py
-│   ├── interposer.py
-│   ├── qams.py
-│   ├── stability_metrics.py
-│   └── types.py
-├── mocks/
-│   ├── __init__.py
-│   ├── mock_geometry_coprocessor.py
-│   ├── mock_persistent_memory.py
-│   └── mock_presence_engine.py
-├── orchestration/
-│   ├── __init__.py
-│   └── purple_orchestrator.py
-├── simulation/
-│   ├── __init__.py
-│   ├── demo_audit_log.json
-│   └── run_demo.py
-├── tests/
-│   ├── __init__.py
-│   ├── test_memory_boundaries.py
-│   ├── test_qams_traceability.py
-│   ├── test_refusals.py
-│   └── test_runtime_enforcement.py
-└── tsrl/
-    ├── __init__.py
-    ├── tsrl1_observation.py
-    ├── tsrl2_routing.py
-    └── tsrl3_stability.py
-```
-This repository is structured around the major runtime boundaries of the Stability Engine demo.
+The current implementation scaffold also includes:
 
-adapters/ contains integration interfaces for the Geometry Co-Processor, persistent memory, and Presence Engine layers
-core/ contains the primary enforcement substrate, including the Control Plane, Invariant Interposer, QAMS, audit logging, shared types, and stability metrics
-mocks/ provides deterministic stand-ins for collaborator-pending or external components so the demo remains runnable in isolation
-orchestration/ contains the Purple Orchestrator that coordinates multi-component execution
-simulation/ contains the demo runner and sample audit output
-tests/ validates runtime enforcement, refusal behavior, memory boundary protection, and traceability guarantees
-tsrl/ contains the three TSRL layers: observation, routing, and recursive stability
-Getting Started
-Requirements
-Python 3.11 or newer
-Run the demo
+- **TSRL-1** for continuous observation and evidence generation
+- **TSRL-2** for deterministic routing and attribution preservation
+- **TSRL-3** for recursive stability evaluation
+- **QAMS** for attributed signal transport
+- **Purple Orchestrator** for deterministic multi-component coordination
+- mock-backed adapters for collaborator-pending components
+- audit logging and runtime tests
 
-From the project root:
-```
+## Current Maturity
+
+### Implemented and runtime-path validated
+
+- TSRL observation-routing-stability chain
+- QAMS attributed transport
+- Purple Orchestrator execution pipeline
+- Interposer-gated geometry access
+- live sanitization before geometry evaluation
+- automatic Tier 0 wiping
+- cross-agent isolation at the Control Plane API level
+- continuity and synergy diagnostics
+- deterministic refusals
+- drift detection with partial graduated enforcement
+- expanded runtime test coverage
+
+### Still soft, mocked, or incomplete
+
+- Human Prime verification remains symbolic
+- geometry, persistent memory, and Presence Engine backends remain mocked
+- Python-level immutability is not hard runtime immutability
+- some Phase 2 memory enforcement retains fallback behavior
+- memory bleed detection assumes cooperative API usage
+- Control Plane statelessness remains unresolved
+- full dynamic envelope narrowing remains incomplete
+
+### Specified but not fully implemented
+
+- AdSim Unit
+- Defense Unit
+- full Integrity Unit
+- Tri-Unit Coordination Protocol
+- optimization-shortcut rejection
+- geometry drift recovery
+- six-layer stack representation in code
+
+## Running the Demo
+
+Requirements:
+
+- Python 3.11 or newer
+
+From the implementation scaffold root:
+
+```bash
 python -m simulation.run_demo
 ```
-Run the tests
 
-From the project root:
-```
+Run the tests:
+
+```bash
 python -m unittest discover tests -v
 ```
 
-Roadmap
-v0.4
-First functional runtime loop
-Working memory boundaries
-Initial holonomic stability scoring
-v0.5
-Multi-component runs with replay logs
-Initial refusal and containment flows
-Early adversarial simulation coverage
-v0.6
-Expanded telemetry and drift mapping
-Dynamic Control Plane routing behavior
-Improved audit visibility and traceability
-v1.0
-Full runtime constraint demonstration
-Persistent memory stabilization
-Exportable reports and evidence artifacts
-License
+## Release Discipline
 
-MIT License.
-See LICENSE for full terms.
+Stability Engine releases are scoped by what the artifact actually earns.
 
-Acknowledgments
+- **v4.1** established structural consistency in the live runtime path after hostile audit and remediation.
+- **v4.2** is intended as a narrow implementation increment centered on the Integrity Unit holonomic drift-correction surface and sealed adapter mediation around collaborator-owned geometry operators.
+- **v5.0** is reserved for a larger convergence release involving repository normalization, broader operational-unit implementation, collaborator interface consolidation, and renewed hostile audit.
 
-Special thanks to early collaborators, reviewers, and researchers helping shape the architecture.
+## What This Project Is Not
+
+Stability Engine is not:
+
+- an alignment model
+- a semantic evaluator
+- a behavioral optimizer
+- an engagement-tuning system
+- a self-modifying governance layer
+- a production-ready security product
+
+Its governance is structural.
+
+## License
+
+MIT License. See `LICENSE` for full terms.
+
+## Acknowledgments
+
+Special thanks to early collaborators, reviewers, and researchers helping shape the architecture, challenge its boundaries, and test its claims.
 
 The Stability Engine is an open project and encourages external review, analysis, and contribution.
