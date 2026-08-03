@@ -39,7 +39,7 @@ Contract-defined architecture with a runnable demo baseline.
 
 ## v4.1 — Hostile-Audited Structural Tightening
 
-v4.1 was not a feature release. It was a targeted structural remediation pass following hostile architectural review.
+v4.1 was not a feature release. It was a targeted structural remediation pass following hostile architectural review and remains the hostile-audited structural baseline for v4.2.
 
 ### Audit findings
 
@@ -81,34 +81,46 @@ The highest-severity contradiction was a direct orchestrator-to-geometry path th
 
 More than proof of concept. Not integration-ready. Not hardened. Not production-ready.
 
-## v4.2 — Integrity Unit Holonomic Drift-Correction Increment
+## v4.2 — Stability Engine v4.2: Integrity Unit Holonomic Drift Correction Prototype
 
-v4.2 is a focused implementation increment, not a full-system rewrite.
+Released August 1, 2026.
 
-### Intended scope
+Published release: [Zenodo DOI 10.5281/zenodo.21752941](https://doi.org/10.5281/zenodo.21752941)
 
-- begin moving the Integrity Unit from specification into runnable code
-- evaluate holonomic residual drift
-- perform metric-weighted correction
-- enforce bounded iteration
-- check coordinate-domain admissibility
-- return structured convergence and failure states
-- preserve sealed adapter mediation around collaborator-owned geometry operators
+v4.2 is the first demonstrable Integrity Unit correction implementation increment. It is a focused release built on the v4.1 hostile-audited structural baseline, not a full-system rewrite.
 
-### Architectural rule
+### Released scope
 
-- Integrity Unit owns the external correction interface
-- collaborator-owned geometry logic remains internal to its own domain
-- adapter mediation is mandatory
-- no raw operator exposure crosses the boundary
+- residual drift evaluation
+- metric-aware bounded correction
+- domain admissibility checks
+- Jacobian and metric validation
+- structured convergence and failure outcomes
+- deterministic correction limits
+- seven passing canonical prototype tests
+- preserved sealed adapter boundary around collaborator-owned geometry operators
+
+### Canonical implementation
+
+- [`releases/v4.2/integrity_unit_v4_2.py`](releases/v4.2/integrity_unit_v4_2.py)
+- [`releases/v4.2/test_integrity_unit_v4_2.py`](releases/v4.2/test_integrity_unit_v4_2.py)
+
+### Architectural boundary
+
+Integrity Unit owns the interface.  
+URIEL owns the internal holonomy.  
+Adapter mediates.  
+Nothing crosses raw.
 
 ### Release posture
 
-v4.2 inherits the v4.1 maturity classification and adds an early operational-unit prototype. It does not claim completion of the Integrity Unit, Tri-Unit coordination, collaborator integrations, or production hardening.
+**Structurally consistent implementation scaffold with cooperative enforcement boundaries, now including a demonstrable Integrity Unit holonomic drift correction prototype.**
+
+v4.2 does not claim completion of the Integrity Unit, URIEL-3b integration, spectral admissibility, defect descent, finite-state collapse enforcement, adversarial hardening, integration readiness, or production readiness.
 
 ## v5.0 — Planned Consolidation Release
 
-v5.0 is reserved for the larger convergence drop.
+v5.0 remains the future consolidation release and is reserved for the larger convergence drop.
 
 ### Planned focus
 
