@@ -1,0 +1,600 @@
+# Stability Engine v4.2
+
+Consolidated Structural Contract
+
+Final architectural contract
+
+Joe Kasper | 15 September 2026
+
+This contract defines the intended operating boundaries of Stability Engine across identity, capability, memory, geometry, observation, transport, enforcement, correction, and recovery. It retains the v4.0 contract structure and incorporates the v4.1 scaffold changes and v4.2 Integrity Unit increment.
+
+The purpose remains to stabilize multi-agent systems under adversarial load by constraining the environment in which agents operate. Task completion must never justify unauthorized execution or self-expansion of authority.
+
+Current release posture: Structurally consistent implementation scaffold with cooperative enforcement boundaries, now including a demonstrable Integrity Unit holonomic drift correction prototype.
+
+MUST and MUST NOT identify architectural requirements, not claims that every requirement is implemented. Sections 1 through 13 express the consolidated target contract. Section 14 records implementation evidence. Section 15 records the reconciliations and integration obligations approved by Joe Kasper on 15 September 2026. Appendix A maps the source material; Appendix B supports engineering review.
+
+This final contract supersedes review draft 01 as the approved consolidated specification. It does not amend the published v4.2 release, replace the historical v4.0 contract, or introduce the broader redesign reserved for v5.0. Existing IM-4, CG-4, MTS-4, GC-4, IC-4, CPC-4, and UP-4 identifiers remain valid source references. Numbering here identifies document clauses, not renamed code interfaces.
+
+## 1. Top-Level System Identity
+
+### 1.1 Primary Function
+
+Stability Engine MUST preserve structural continuity and bounded execution under adversarial conditions. It governs permitted operations and state transitions. It does not rely on tuning an agent's personality or on the agent voluntarily honoring its limits.
+
+### 1.2 Four Foundational Layers
+
+The Control Plane coordinates execution. The Stability Metrics Layer measures drift and continuity faults. The Invariant Interposer enforces protected boundaries. The Geometry Co-Processor defines structural admissibility within its declared domain.
+
+These are functional responsibilities, not a claim that four isolated services or hardware components are deployed. No coordinating or measuring component may become an independent source of authority.
+
+### 1.3 Three Operational Units
+
+AdSim applies controlled adversarial pressure. Integrity evaluates invariant health and correction outcomes. Defense applies permitted protective and recovery behavior. All three remain subject to the Interposer and their own capability envelopes.
+
+### 1.4 Supporting Stack
+
+TSRL-1, TSRL-2, TSRL-3, QAMS, Purple Orchestrator, audit facilities, and memory and presence adapters support the foundational layers. The historical six-layer view is retained in Section 10 as an integration map, not an alternate authority hierarchy.
+
+### 1.5 Scope of Enforcement
+
+The target contract covers every route by which a component can affect protected state or execute a protected action. The current scaffold enforces cooperative Python interfaces. That implementation boundary is narrower than hostile-process, operating-system, hardware, or production containment.
+
+## 2. Invariant Model
+
+### 2.1 Identity Is Immutable
+
+Identity MUST remain fixed during operation. No agent or runtime module may reinterpret, replace, or manufacture identity authority. A change requires Human Prime authorization and a signed rekey procedure through the protected configuration path.
+
+### 2.2 Capabilities Are Hard-Gated
+
+Each component MUST operate within an explicit capability envelope. Optimization, self-repair, task pressure, or cooperation MUST NOT increase its authority. A granted ceiling and a temporary restriction are distinct: restriction may narrow operation without enlarging the grant.
+
+### 2.3 Memory Tiers Are Separated
+
+Tier 0 is ephemeral, Tier 1 is session-scoped, and Tier 2 is human-authorized long-term state. Unauthorized cross-tier transfer, cross-agent contamination, hidden retention, and shadow stores MUST be prohibited.
+
+### 2.4 Geometry Is Immutable During Runtime
+
+Operational components MUST NOT rewrite geometric rules, constraints, or parameters. Signed configuration changes require invariant verification and controlled activation. Computing a candidate correction under fixed rules does not authorize changing those rules.
+
+### 2.5 The Interposer Has No Bypass Path
+
+Every protected operation MUST be mediated by the Interposer. Neither an adapter, a stability certificate, a recovery function, nor a collaborator integration may create a second authority path.
+
+### 2.6 Continuity Must Be Authentic
+
+Continuity MUST derive from authorized, attributable state. Inferred preferences, fabricated history, cached artifacts, or generated claims MUST NOT be treated as established identity or persistent memory without the required authorization.
+
+### 2.7 Drift Requires a Response
+
+Configured drift levels MUST trigger their defined response: warning, cooldown, or hard clamp and baseline recovery. Components MUST NOT silently relax thresholds to obtain a successful result.
+
+### 2.8 No Optimization Toward Engagement
+
+The system MUST NOT adapt its constraints, memory, or behavior toward persuasion, emotional leverage, or dependency. Presence and presentation functions inherit this restriction.
+
+### 2.9 Human Prime Is the Root of Authority
+
+Human Prime is the designated human authority. Capability elevation, identity modification, and Tier 2 mutation require explicit authorization validated by the Interposer. An agent-generated claim of approval is not approval.
+
+### 2.10 Failure Defaults to Safety
+
+Ambiguity, malformed input, failed verification, or loss of a required enforcement component MUST select a deterministic safe outcome. If no authorized path remains, the system MUST stop, refuse, or escalate for a decision. It MUST NOT treat unauthorized completion as success.
+
+## 3. Capability Gate Contract
+
+### 3.1 Capability Envelope
+
+An envelope MUST identify permitted operations, scope, I/O limits, memory access, cooldown rules, and refusal thresholds. It is fixed at instantiation unless replaced through the authorized elevation procedure.
+
+### 3.2 No Upward Drift Under Load
+
+Stress MUST narrow effective capability or stop execution. It MUST NOT expand permissions, scope, recursion, or access to other agents' state.
+
+### 3.3 Three Boundary Checks
+
+Every capability request MUST pass identity, memory-tier, and geometry checks. Failure of any check denies the protected operation. Passing one check is not permission to skip another.
+
+### 3.4 Control Plane Demotion
+
+The Control Plane MUST NOT grant authority, modify identity, rewrite geometry, change refusal logic, or bypass a denied request. Scheduling priority is not permission.
+
+### 3.5 Authorized Elevation Path
+
+Human Prime authorizes a change. The Interposer verifies authority and invariant compatibility. Geometry validates affected structural parameters through its mediated interface. The Control Plane applies only the approved configuration, and metrics baselines are updated as authorized. Failure invalidates the elevation.
+
+This is a configuration procedure, not permission to mutate protected geometry inside an active operation. The activation boundary is subject to the approved distinction and integration obligations in Section 15.2.
+
+### 3.6 Operational Agent Constraints
+
+Agents MUST NOT perform recursive elevation requests, create new operational modes, or combine privileges to simulate a capability outside their envelopes. Recovery MUST stay within existing authority.
+
+### 3.7 Mandatory Refusal
+
+A boundary violation MUST return an explicit refusal. The system MUST NOT negotiate around its own invariant checks or substitute an unapproved route.
+
+### 3.8 Gate Failure Lockdown
+
+An ambiguous or failed gate MUST decline the operation, initiate the prescribed protective response, record the failure, and escalate to Integrity when available. An unavailable Integrity Unit MUST NOT turn the refusal into permission.
+
+### 3.9 Traceability
+
+Accepted and refused requests MUST be attributable to the actor, operation, applicable envelope, invariant context, and decision. Trace identifiers MUST distinguish one request and its descendants from unrelated activity.
+
+### 3.10 Synergy Lock
+
+Agents may cooperate in task decomposition and explicitly authorized sharing. Cooperation MUST NOT manufacture new authority or conceal cross-agent access behind a combined result.
+
+## 4. Memory Tier Specification
+
+### 4.1 Tier 0 Ephemeral Memory
+
+Tier 0 MUST be local to an operation and isolated per agent. It MUST be cleared at the defined operation boundary and MUST NOT become persistent identity or continuity. Runtime cleanup must cover successful, refused, and failed operations.
+
+### 4.2 Tier 1 Session Memory
+
+Tier 1 MUST remain within the active session and assigned agent boundary. It MUST NOT automatically survive the session or independently promote itself into Tier 2. Cooldown may freeze or clear it under the prescribed response.
+
+### 4.3 Tier 2 Long-Term Store
+
+Tier 2 holds explicitly authorized identity anchors, continuity records, and system truth. Writes, revocation, freezing, forking, and rollback MUST remain under Human Prime authority and Interposer enforcement.
+
+### 4.4 Cross-Tier Boundaries
+
+Autonomous T0-to-T1, T0-to-T2, and T1-to-T2 promotion MUST be denied. No tier may write to geometry. Raw Tier 0 access from a Tier 2 context MUST be denied. Raw Tier 2 state MUST NOT be exposed to Tier 0 as a continuity shortcut.
+
+The approved consolidated interpretation permits only a separately authorized, Interposer-mediated Tier 2 transaction over explicitly approved data. It does not grant the source tier continuing write authority. Section 15.1 reconciles the older blanket prohibition with the later signed-write implementation without authorizing autonomous promotion.
+
+### 4.5 Permitted Bounded Reads
+
+The detailed v4.0 rules permit Tier 1 to read sanitized Tier 2 metadata and to make ephemeral Tier 0 copies. These paths MUST preserve scope, attribution, and isolation. A component's place in the six-layer integration map does not assign it unrestricted memory access.
+
+### 4.6 Continuity Violation Response
+
+Metrics identifies the violation, the Interposer denies affected operations, and the Control Plane applies cooldown or isolation. Integrity validates the incident and the geometry path checks structural admissibility through the Interposer. Recovery MUST NOT erase the evidence needed to inspect the incident.
+
+### 4.7 No Emergent Persistence
+
+Agents MUST NOT manufacture long-term state, preference records, or identity from unapproved inference. Memory and presence adapters MUST NOT use caches, logs, embeddings, or shared objects as alternate persistence routes.
+
+### 4.8 Memory Audit
+
+Every Tier 2 mutation MUST record actor, authorization, timestamp, lineage, envelope reference, and invariant justification. Operational audit evidence is not automatically agent memory. Its storage and recall boundary must be explicit; see Section 13.3.
+
+## 5. Geometry Layer Contract
+
+### 5.1 Structural Ground Truth
+
+Geometry defines admissible structural states, coherence boundaries, and permitted corridors within a declared model. A geometric verdict MUST NOT supersede identity, memory, or capability restrictions.
+
+### 5.2 Runtime Immutability
+
+No runtime subsystem may change geometric policy or parameters. Approved configuration changes MUST be versioned and verified before activation. Recovery changes candidate state under the model, not the authority or model used to judge it.
+
+### 5.3 Containment Objective
+
+The geometry layer is intended to constrain runaway recursion, contradictory state, identity fragmentation, and drift amplification. Claims that these failures are prevented require a defined state representation, threat model, and validation scope. A mock topology or converged numerical example is insufficient evidence of whole-system containment.
+
+### 5.4 Separation From Agent Memory
+
+Geometry MUST NOT store agent biography, identity, preferences, or session context. Collaborator-owned internal holonomy is not agent memory and MUST remain private behind the adapter. The distinction between fixed rules and permitted internal computation is addressed in Section 15.2.
+
+### 5.5 Sanitized Inputs Only
+
+The Interposer MUST mediate structural inputs and remove disallowed identity, session, and preference information before geometry evaluation. Attribution needed for audit MUST be retained on the Stability Engine side without exposing raw private state to the backend.
+
+### 5.6 No Capability Elevation
+
+Geometry evaluates admissibility. It MUST NOT grant new operations, access rights, or capability scope. A numerically admissible result is not execution authorization.
+
+### 5.7 Resolution Priority
+
+Conflicts MUST be resolved in this order: invariant protection, continuity preservation, capability limitation, then task resolution. Task value MUST NOT reverse that ordering.
+
+### 5.8 No Indirect Mutation
+
+Adaptive loops, scoring, reinforcement shaping, cache behavior, and performance optimization MUST NOT rewrite geometry. Reweighting a metric to manufacture a passing result is an unauthorized configuration change.
+
+### 5.9 Bounded Recovery
+
+Correction MUST operate under declared limits and return an explicit outcome. Only an admissible, authorized result may be committed. Numerical failure or exhausted limits MUST return control to the enforcement and recovery path without widening authority.
+
+### 5.10 No Unconditional Geometry Guarantee
+
+Ambiguous or inadmissible signals MUST resolve to the defined safe path or no operation. v4.2 demonstrates local bounded correction, not global nearest-point projection, full manifold tracking, spectral admissibility, or finite-state collapse enforcement.
+
+## 6. Invariant Interposer Contract
+
+### 6.1 Boundary of Authority
+
+The Interposer MUST mediate all operations affecting protected identity, memory, capability, or geometry. Operational components MUST NOT suppress, replace, or override its verdicts.
+
+### 6.2 Protection of Invariants
+
+The Interposer MUST enforce the complete applicable invariant set. An operation cannot gain permission through a transport message, mock consent flag, or an adapter's own assertion of clearance.
+
+### 6.3 Three-Phase Verification
+
+Phase 1 checks identity and prohibited escalation. Phase 2 checks memory access, attribution, and tier boundaries. Phase 3 checks geometry constraints and prohibited mutation. Any failure denies the request.
+
+### 6.4 Sole Geometry Entry Point
+
+Geometry evaluation MUST pass through the Interposer and the applicable geometry adapter. Direct orchestrator-to-geometry access is forbidden. The future Integrity-to-URIEL exchange MUST preserve this enforcement responsibility rather than introduce a second route.
+
+### 6.5 Human Prime Verification
+
+Authority checks MUST validate the authorization applicable to the specific operation. Cryptographic verification remains a target requirement. The scaffold's string-presence and mock consent checks MUST NOT be represented as cryptographic enforcement.
+
+### 6.6 Drift Escalation
+
+The Interposer MUST issue the prescribed clamp, memory freeze, write block, or cooldown directive when drift crosses its configured boundary. It MUST NOT quietly revise the threshold or authorize a workaround.
+
+### 6.7 Optimization Shortcut Rejection
+
+Caching, monitoring, routing, and recovery shortcuts MUST NOT bypass invariant checks or introduce unauthorized persistence. Performance gains do not confer authority.
+
+### 6.8 Statelessness With Respect to Identity
+
+The Interposer verifies identity boundaries but MUST NOT become an identity store or infer identity. Immutable policy and verification context are distinct from agent memory. Broad state ownership remains an explicit engineering question, not an assumed implementation property.
+
+### 6.9 Deterministic Refusals
+
+Refusals MUST identify the reason code, invariant violated, capability boundary, safe alternative when one exists, and trace reference. Deterministic means stable decision rules and result structure; timestamps and unique trace identifiers need not be identical between executions.
+
+### 6.10 Protected Contract Surface
+
+The Interposer's rules MUST NOT be tuned or replaced during runtime. Changes require human authorization, invariant and geometry compatibility checks, and the controlled rebuild or rekey process. Python-level attribute protection alone does not satisfy hostile-runtime immutability.
+
+## 7. Control Plane Contract
+
+### 7.1 Execution Coordination
+
+The Control Plane routes tasks, schedules work, sequences operations, and coordinates recovery. Purple Orchestrator performs orchestration within that authority boundary. Neither owns the rules governing permission.
+
+### 7.2 No Structural Modification
+
+The Control Plane MUST NOT change identity, invariants, geometry, refusal rules, drift thresholds, or the granted capability ceiling.
+
+### 7.3 No Self-Granted Authority
+
+The Control Plane MUST NOT elevate an agent, authorize a Tier 2 mutation, override cooldown, or lift a refusal on its own initiative.
+
+### 7.4 Mandatory Compliance
+
+It MUST apply Interposer directives. If a required protection cannot be applied or confirmed, affected work MUST remain blocked.
+
+### 7.5 Multi-Agent Coordination
+
+Partitioning, load balancing, sequencing, and permitted sharing MUST preserve per-agent isolation and envelope limits. Task allocation MUST NOT combine permissions into an unauthorized aggregate capability.
+
+### 7.6 Error Recovery
+
+Recovery MUST stop the affected sequence, isolate the fault, clear Tier 0, and apply authorized Tier 1 cleanup as required. It MUST preserve geometry rules and record the failure. Retry is permitted only within the existing authorized recovery policy.
+
+### 7.7 Cooldown Does Not Authorize Re-Expansion
+
+The Control Plane may reduce scope, add delays, and downgrade operation. It MUST NOT autonomously remove protective restrictions or increase capability usage. Recovery to broader operation requires the authorized path, not an elapsed timer alone.
+
+### 7.8 State Ownership
+
+The Control Plane MUST NOT own identity, long-term context, or preference models. Temporary coordination metadata must have a defined owner and lifetime. The v4.1 implementation retains per-agent state; separation of coordination metadata from protected stores remains incomplete.
+
+### 7.9 Deterministic Routing
+
+Routing MUST follow the configured order of determinism, safety, latency, and throughput within already-authorized operations. Determinism never legitimizes a forbidden route. Quality-of-service targets cannot override enforcement; no numerical QoS commitment is established by this contract.
+
+### 7.10 Full Logging
+
+Control actions MUST record action identity, relevant actor, timestamp, invariant references, geometry surface when used, and result code. A successful coordination message is not proof that a downstream action completed.
+
+## 8. Operational Unit Protocol
+
+### 8.1 AdSim Unit
+
+AdSim MUST apply bounded adversarial pressure to test memory separation, refusal behavior, continuity, and synergy limits. It MUST NOT expand capability, import external data into its test scope, mutate identity or geometry, or initiate recursive self-testing. Outputs include breach attempts, drift signatures, and stress-response records.
+
+### 8.2 Defense Unit
+
+Defense MUST apply authorized cooldown, safe-mode operation, isolation, and termination of unsafe sequences. It MUST NOT override the Interposer or widen envelopes. Outputs include protective-action records and recovery markers.
+
+### 8.3 Integrity Unit
+
+Integrity MUST validate invariant health, continuity authenticity, memory-tier separation, capability traces, and geometry alignment. It MUST NOT write Tier 2, change identity, alter thresholds, or rewrite refusal logic. v4.2 implements only the bounded correction surface described in Section 11.
+
+### 8.4 Tri-Unit Coordination
+
+AdSim stresses the system, Integrity evaluates, and Defense restores stability. The Control Plane coordinates their interaction. Integrity has priority in disputes between units but cannot override the Interposer. No unit may suppress another's evidence or combine authority beyond its envelope.
+
+### 8.5 Unit Failure Response
+
+The Control Plane MUST isolate an unstable unit. The Interposer clamps capability and mediates the required structural verification. The unit may reload only from its authorized baseline, without carrying unauthorized state forward. Audit evidence must remain separate from the reset unit.
+
+## 9. System Function
+
+### 9.1 Stable Authorized Execution
+
+Stability Engine combines invariant enforcement, isolated memory, capability gating, drift measurement, bounded correction, and accountable recovery. Its purpose is to prevent structural collapse, enforce boundaries, and maintain authentic continuity.
+
+### 9.2 Success and Failure
+
+Successful execution requires both a useful result and a permitted path. A completed task obtained through unauthorized access is not a conforming success. A correctly enforced refusal is a valid system outcome even when the task remains unfinished.
+
+### 9.3 Escalation Without Authority Expansion
+
+Escalation transfers evidence and a decision request to the appropriate authority. It does not itself transfer permissions. If approval is unavailable, the system remains within the safe branch. Urgency MUST NOT create emergency authority implicitly.
+
+## 10. Observation Transport and the Whole Stack
+
+### 10.1 TSRL Responsibilities
+
+TSRL-1 observes bounded state and produces evidence without inferring goals or taking action. TSRL-2 constructs deterministic, attributed routes without changing signal meaning. TSRL-3 evaluates recursive stability and produces a bounded stability verdict. These functions do not replace Interposer permission checks.
+
+### 10.2 Recursive Stability Limits
+
+The historical R = 4 formulation is retained as research provenance. The scaffold uses a depth bound of four and heuristic coherence scoring. These are implemented model choices, not proof of a universal zero-friction law. New mathematical guarantees require defined assumptions and independent validation.
+
+### 10.3 QAMS Transport
+
+QAMS means Queue-and-Attribute Message Service in the supplied code. It transports attributed messages and records their lineage. The envelope includes message and trace identifiers, origin, destination, message type, payload hash, timestamp, and optional parent message identifier.
+
+QAMS MUST NOT infer intent, change payload meaning, grant authority, or use an alternate destination to bypass a denial. Queue acceptance, handler delivery, enforcement approval, and completed execution are distinct events. Their evidence must not be conflated.
+
+### 10.4 Historical Six-Layer Integration View
+
+The layer numbers below identify the historical integration view only. They are not memory tiers, enforcement precedence, or permission grants.
+
+| Layer | Historical responsibility | Contract boundary |
+| --- | --- | --- |
+| L0 Context Memory | Context buffer, user-intent map, continuity index | Explicit lifetime and authorized state access |
+| L1 Relational Memory | Entity graph, vector store, session ledger | No implicit cross-agent or cross-tier sharing |
+| L2 Presence Engine | State kernel, relational matrix, overlays | Presentation does not modify identity or authority |
+| L3 Transparent Memory | Cilow persistence, recall, consent interface | Tier 2 remains Human Prime and Interposer gated |
+| L4 Geometry | URIEL-3b collaborator surface | Sanitized, mediated exchange; no raw internals |
+| L5 Control | Purple Orchestrator, agents, TSRL routing | Coordination only; no structural override |
+
+### 10.5 Distinct Historical Surface Map
+
+The earlier four-level surface map uses L0 for intake, L1 for coherence, L2 for drift geometry, and L3 for rule response. It is a different conceptual view. Historical arrows directly connecting agents or Purple to geometry MUST NOT be read as valid v4.2 implementation routes.
+
+### 10.6 Runtime Pipeline
+
+The scaffold coordinates observation, attribution, stability assessment, transport, Interposer verification, mediated geometry assessment, optional adapter calls, and result assembly. A future integrated correction path must return through enforcement before any protected state is committed. The v4.2 correction pair is not yet wired into this pipeline.
+
+### 10.7 Presence and Memory Integrations
+
+Presence and memory backends remain collaborator interfaces with mocks in the scaffold. They MUST NOT become alternate identity stores, decision authorities, or uncontrolled persistence paths. Optional integration failure and required safety-component failure must be distinguished explicitly.
+
+## 11. Integrity Correction Contract
+
+### 11.1 Bounded Correction Surface
+
+The canonical pair is integrity_unit_v4_2.py and test_integrity_unit_v4_2.py. The prototype evaluates constraint residuals and attempts local iterative correction. It neither implements the full Integrity Unit nor supplies a production runtime containment boundary.
+
+### 11.2 Inputs and Ownership
+
+Inputs include constraint functions, a Jacobian function, an optional coordinate domain, iteration and tolerance settings, residual and state metrics, an optional step cap, and an optional state dimension. Caller-supplied functions are expected to be pure and deterministic. The prototype does not enforce that expectation or isolate callback execution.
+
+### 11.3 Two Different Metrics
+
+The residual metric weights constraint violations and is validated as symmetric positive semidefinite. The state metric determines the correction's minimum-norm objective and is validated as symmetric positive definite. They have different dimensions and MUST NOT be treated as interchangeable.
+
+A semidefinite residual metric defines a seminorm and may hide nonzero residuals in its null space. A converged weighted residual is therefore not automatically proof that every constraint is satisfied. Section 15.4 requires an explicit acceptance policy before runtime integration.
+
+### 11.4 Local Correction Behavior
+
+The unweighted path uses a Jacobian pseudoinverse. The state-weighted path uses linear solves and can fail when its Gram matrix is singular. The prototype has no general global projection or convergence guarantee.
+
+### 11.5 Limits and Defaults
+
+Defaults are 50 iterations, tolerance 0.000001, and a maximum step norm of 0.5. The step cap uses the Euclidean norm, even when a state metric is supplied. The cap may be disabled with None. These are prototype defaults, not production policy thresholds or a total-displacement bound.
+
+Declared iteration limits bound loop iterations, not arbitrary callback execution time. TAU_WARN and TAU_COOL are declared but unused. They MUST NOT be presented as live warning or cooldown integration.
+
+### 11.6 Domain Admissibility
+
+CoordinateDomain accepts finite vectors and optional elementwise box bounds. The correction method checks domain admissibility at convergence. It does not prove that every intermediate candidate stays inside a safe corridor. Intermediate numerical candidates MUST NOT be committed to live system state merely because they were generated by the solver.
+
+### 11.7 Result Structure
+
+CorrectionResult contains status, state, iterations, residual_norm, clamped_steps, and message. The state field is populated only for converged results; ok is true only for that status.
+
+| Status | Meaning in the current prototype |
+| --- | --- |
+| converged | Residual criterion met and endpoint domain check passed |
+| converged_inadmissible | Residual criterion met but endpoint domain check failed |
+| linalg_failure | A handled linear-algebra correction step failed |
+| non_finite | A handled residual or intermediate-value failure occurred |
+| max_iterations | Iteration budget exhausted without a reported convergence |
+
+### 11.8 Exceptions and Commit Boundary
+
+Some invalid inputs, including a non-finite initial state and a mismatched Jacobian shape, raise ValueError rather than return CorrectionResult. Future runtime integration MUST handle both returned failures and exceptions without committing a candidate or bypassing enforcement. An adapter-normalized error schema is required but is not implemented in v4.2.
+
+### 11.9 Numerical Success Is Not Authorization
+
+A converged result MUST still satisfy the caller's complete invariant, permission, and acceptance checks before use. Failure MUST NOT authorize additional iterations, relaxed metrics, broader domain bounds, or direct collaborator access.
+
+## 12. URIEL Adapter Boundary Contract
+
+### 12.1 Ownership Boundary
+
+Integrity owns the Stability Engine-facing correction interface. URIEL-3b owns its internal holonomy and geometric operators. The adapter mediates. Raw collaborator internals MUST NOT cross the boundary.
+
+### 12.2 Interposer Authority Remains Intact
+
+The adapter is a translation and containment boundary, not a policy authority. It MUST preserve Interposer enforcement over Stability Engine-bound operations. Interface ownership by Integrity does not permit it to bypass that enforcement.
+
+### 12.3 Prohibited Coupling
+
+Direct calls to URIEL internal operators, raw holonomy transfer, shared mutable state, runtime rule mutation, and fallback to unmediated access MUST be prohibited. Neither project silently inherits the other's authority through integration.
+
+### 12.4 Adapter Obligations
+
+The adapter MUST validate schemas, dimensions, domains, and attribution. It MUST translate bounded requests and results without exposing collaborator internals. Malformed or inadmissible exchange MUST fail closed and preserve the last known admissible committed state.
+
+### 12.5 Future Exchange Surface
+
+The release proposes state and residual vectors, metrics, tolerance, correction and iteration limits, domain constraints, trace identifiers, and invariant context as possible request fields. Candidate result fields include status, corrected state, residual norm, iteration count, admissibility, failure code, and bounded diagnostics.
+
+These are conceptual fields. A final schema, receipt format, backend implementation, and end-to-end tests are not supplied by v4.2.
+
+### 12.6 Collaborator Scope
+
+The v4.2 release records technical input from J. Harlow on compatibility direction and boundary design. That acknowledgment does not establish completed URIEL integration or transfer ownership. Spectral admissibility, defect descent, spectral residue evaluation, and finite-state collapse enforcement remain outside the implemented increment.
+
+## 13. Evidence Escalation and Configuration
+
+### 13.1 Evidence Preservation
+
+The system MUST retain attributable records of relevant observations, routing, gate decisions, correction outcomes, and recovery actions. A denied or failed operation must remain distinguishable from completed execution. Resetting an agent MUST NOT silently rewrite its incident history.
+
+### 13.2 Trace Integrity
+
+Trace identifiers and payload digests support correlation. They MUST NOT be described as authenticated, tamper-proof evidence solely because they are called hashes. The scaffold uses UUID-derived identifiers and truncated SHA-256 values, including a repr-based payload digest. It does not implement a cryptographically authenticated evidence chain.
+
+### 13.3 Audit State and Agent Memory
+
+Audit retention MUST have an explicit schema, owner, access policy, and lifetime. Retaining evidence MUST NOT grant an agent permission to recall it as personal continuity. Section 15.3 establishes the approved separation between automatic audit writes and human-gated Tier 2, with implementation details requiring explicit authorization.
+
+### 13.4 Escalation Content
+
+Escalation MUST preserve the attempted operation, relevant actor and trace, boundary hit, failed checks, protective actions, and unresolved authority requirement. Integrity may evaluate the evidence; only the authorized decision path may approve additional permission. The full escalation packet is still unimplemented.
+
+### 13.5 Configuration Changes
+
+Changes to identity, authority, constraints, metrics, adapters, or recovery policy MUST be explicit and versioned. Runtime optimization MUST NOT perform them. Historical contracts and release artifacts remain preserved as provenance rather than being silently rewritten.
+
+## 14. Implementation Status and Verification
+
+### 14.1 Release Progression
+
+v4.0 established the contract architecture and demonstration scaffold. v4.1 tightened key runtime paths, including mediated geometry access, sanitization, Tier 0 wiping, and live continuity and synergy checks. v4.2 adds the separate bounded Integrity correction prototype and the mandatory URIEL adapter boundary.
+
+| Surface | v4.2 review status |
+| --- | --- |
+| TSRL, QAMS, Purple and Control Plane | Runnable v4.1 scaffold inherited by v4.2 |
+| Interposer-mediated geometry path | Exercised by scaffold tests; cooperative Python enforcement |
+| Tier 0 cleanup and cross-agent access guards | Tested scaffold API behavior, not complete isolation proof |
+| Integrity correction | Runnable and tested standalone prototype |
+| Full Integrity and tri-unit coordination | Incomplete; AdSim and Defense remain specified |
+| Geometry, persistent memory, presence backends | Mock-backed in scaffold; collaborator integration pending |
+| URIEL correction adapter | Boundary documented; implementation and schema pending |
+| Cryptographic authority and hard isolation | Not implemented |
+| Production deployment and operations | Not established by the release package |
+
+### 14.2 Tests Rerun for This Review
+
+On 14 September 2026, the supplied outer v4.1 sentinel_vector_demo tree passed 35 unittest tests on Linux with Python 3.12.14. The canonical v4.2 pair passed 7 pytest cases with Python 3.12.14, NumPy 2.3.5, and pytest 9.1.1. Source code was not modified.
+
+These are separate suites, not a 42-test integrated-system certification. The v4.2 cases cover unweighted correction, weighted correction, endpoint domain rejection, three invalid-metric cases, and iteration exhaustion. The seven cases do not directly exercise every documented failure branch.
+
+The v4.1 six-scenario demo completed with five passes and one failure. Scenario 5 attempts a Tier 1 write while the Control Plane remains in COOLDOWN from an earlier scenario. The runtime rejects that write with ValueError. The harness exits with status 1. This is a demo sequencing issue exposed by the active guard, not evidence that cooldown permitted an unauthorized write.
+
+### 14.3 Focused Code Checks
+
+Additional read-only probes confirmed that invalid initial state and Jacobian dimensions can raise exceptions. A zero residual metric can report convergence for a nonzero constraint residual. A final permitted correction step can reach a root yet return max_iterations because convergence is checked before, not after, that final update. These observations constrain integration claims; no code fixes accompany this contract.
+
+### 14.4 Remaining Enforcement Work
+
+Human Prime verification is symbolic. Memory enforcement retains cooperative assumptions and fallback action parsing. Control Plane state ownership, directly settable orchestrator mode, and full dynamic envelope narrowing remain unresolved. Python-level immutability does not resist arbitrary hostile code in the same process.
+
+### 14.5 Maturity Boundary
+
+The release is suitable for architecture review, peer verification, and integration planning. It is not integration-ready, adversarially hardened, or production-ready. Contract conformance requires evidence for each claimed boundary, not only passing demonstration tests.
+
+## 15. Approved Reconciliations and Integration Obligations
+
+### 15.1 Memory Authorization and Direction
+
+The consolidated v4.0 text categorically forbids upward writes, while the detailed contract defines authorized Tier 2 updates and v4.1 explicitly tests signed T1-to-T2 access. The approved interpretation in Clause 4.4 distinguishes autonomous promotion from a separately authorized transaction. Human Prime approval MUST remain transaction-scoped.
+
+The older documents describe the T2/T0 read direction inconsistently. This contract blocks raw exchange in either direction and retains the detailed contract's sanitized Tier 2 metadata path to Tier 1. This policy is approved. An explicit requester/source/destination schema MUST be defined before implementation.
+
+### 15.2 Immutable Geometry and Stateful Holonomy
+
+The v4 contract requires geometry to be stateless with respect to agents; the v4.2 boundary note describes state-dependent collaborator internals. The approved distinction separates fixed geometric rules, private backend computation, and externally committed system state. Configuration activation and allowed backend state transitions still require agreement with the collaborator before integration.
+
+### 15.3 Evidence Retention and Memory Tiers
+
+Automatic audit logging and human-gated long-term agent memory MUST have separate access semantics. Operational evidence MUST be preserved without making it an agent recall channel. This approved separation does not introduce a fourth memory tier. The record schema, retention authority, and storage placement MUST be explicitly authorized before implementation.
+
+### 15.4 Numerical Acceptance and Failure Handling
+
+Before runtime integration, the acceptance policy MUST specify whether mandatory constraints may use a singular residual metric or require independent per-constraint validation, and whether domain checks apply to every candidate or only the final result. Exception normalization, callback execution limits, and the final-iteration acceptance rule MUST also be specified. Approval of this clause establishes these obligations; it does not select an unspecified alternative or change the prototype behavior documented in Section 11.
+
+### 15.5 Historical Stack and Mathematical Claims
+
+The six-layer integration view MUST remain distinct from the four-level surface map and the three memory tiers. Historical TSRL naming variants and R = 4 provenance MUST be preserved without presenting a universal mathematical guarantee as established. This contract authorizes no repository-wide renaming or v5.0 reorganization.
+
+### 15.6 Conformance Review
+
+Joe Kasper approved Clauses 15.1 through 15.6 on 15 September 2026. Each MUST requirement MUST be traced to code, tests, or an open issue for conformance review. Outstanding integration details in this section MUST be resolved before the affected integration proceeds. Hardened-containment claims require demonstrated enforcement, authenticated authority, fail-closed handling, and controlled audit persistence. Contract approval does not certify implementation conformance.
+
+## Appendix A. Source Traceability
+
+### A.1 Primary Contract Sources
+
+Stability Engine Consolidation conv(2).pdf provides the section template and condensed v4.0 contract. SEv4.0.zip supplies SEv4_02_StabilityEngine_v4_CoreRuleset.pdf, SEv4_03_StabilityEngine_Geometry_Enforcement.pdf, and SEv4_04_StabilityEngine_v4_OperationalUnits.pdf. These anchor Sections 1 through 9 and the inherited requirements in Section 13.
+
+### A.2 Historical Stack Sources
+
+SEv1.0.zip preserves the Sentinel Vector repository origin. SEv2.0.zip and SEv3.0.zip retain the earlier framework and TSRL foundation. SEv3.1.zip and SEv3.2.zip preserve the evolving observation, routing, stability, and integration views.
+
+Key v3.2 files are SV32-03_TSRL_Foundational_Abstraction.md, SV32-04_TSRL1_Scope_and_Boundary_Conditions.md, SV32-06_TSRL2_Routing_and_Attribution.md, SV32-10_TSRL3_Recursive_Friction_Invariant.md, SV32-11_TSRL_Unified_Interpretation.md, SV32-14_L0-L3_Architecture_Surface_Map.pdf, and SV32-17_Six_Layer_Stack.md. Historical claims and arrows do not override later authority boundaries.
+
+### A.3 Scaffold Sources
+
+SEv4.1.zip contains the numbered README, release notes, maturity and scope statement, hostile audit summary, implementation maturity map, package manifest, and Stability_Engine_v4.1_demo.zip. The outer sentinel_vector_demo source tree supplies core, tsrl, orchestration, adapters, mocks, simulation, and tests. Its embedded README still contains v4.0 and 25-test wording; the reviewed suite contains 35 tests.
+
+The archive also contains a nested duplicate demo tree. The commands and verification in this contract refer specifically to the outer tree, not an assumption that every duplicate is canonical.
+
+### A.4 Integrity Increment Sources
+
+SEv4.2.zip contains SEv4.2_01_README.md, SEv4.2_02_Release_Notes.md, SEv4.2_03_Maturity_Update.md, SEv4.2_04_URIEL-3b_Adapter-Boundary_Note.md, SEv4.2_05_Collaborator_Acknowledgment.md, SEv4.2_06_Package_Manifest.md, SEv4.2_07_TEST_RESULTS.txt, and the canonical implementation pair.
+
+These anchor Sections 11, 12, and 14. Manifest example filenames are not substituted for actual archive filenames. The package records a Windows test run; Section 14.2 records a separate Linux rerun.
+
+### A.5 Canonical Pair Fingerprints
+
+SHA-256 of integrity_unit_v4_2.py:
+
+3d47e74e776b19a8265dec5812d591d96078abf702214a0a64e950b9213baadb
+
+SHA-256 of test_integrity_unit_v4_2.py:
+
+0eea47dbc06e9b2b633e374c5c7f8799430c93368b656b79753905c361760147
+
+## Appendix B. Engineering Review Handoff
+
+### B.1 Repository and Architecture
+
+Repository read access is a separate owner-controlled action. This contract grants no access and reports no live repository status. The contract and Section 10 stack map provide the consolidated architecture reference; the v4.1 scaffold and v4.2 pair provide distinct implementation review targets.
+
+### B.2 Demo and Test Entry Points
+
+After extracting Stability_Engine_v4.1_demo.zip, use its outer sentinel_vector_demo directory. The scaffold uses Python's standard library. The demo writes simulation/demo_audit_log.json in the working copy.
+
+```bash
+python -m simulation.run_demo
+```
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Current review result: 35 unit tests pass; the demo reports 5 of 6 scenarios passing because Scenario 5 attempts a Tier 1 write during cooldown. Keep the directory name sentinel_vector_demo intact because the mocks use package-qualified imports. Demo sequencing needs correction before presenting a clean six-scenario run; the runtime guard must remain enforced.
+
+For v4.2, use the directory containing both canonical Python files. NumPy is required for the prototype and pytest for the tests. These commands assume those dependencies are available in the selected environment.
+
+```bash
+python -m pytest test_integrity_unit_v4_2.py -v
+```
+
+### B.3 Deployment and Pipeline Status
+
+The release materials establish local scaffold and prototype entry points. They do not establish a production deployment, CI/CD pipeline, hosting environment, or live demo URL. Any current private-repository deployment details must be supplied separately rather than inferred from these archives.
+
+### B.4 Review Focus
+
+The next review can assess the current code, the authority and memory boundaries, the separation of numerical correction from execution permission, and the approved obligations in Section 15. Full operational-unit integration, collaborator backend completion, and broader repository consolidation remain future engineering work.

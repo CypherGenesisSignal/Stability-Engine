@@ -8,18 +8,28 @@ Stability Engine is a deterministic runtime-constraint architecture for multi-ag
 
 The current public implementation line is:
 
-- **v4.0** — contract-defined architecture and runnable demo baseline
-- **v4.1** — hostile-audited structural baseline with critical runtime-path remediation
-- **v4.2** — released Integrity Unit holonomic drift correction prototype
-- **v5.0** — planned future consolidation release
+- **v4.0** - contract-defined architecture and runnable demo baseline
+- **v4.1** - hostile-audited structural baseline with critical runtime-path remediation
+- **v4.2** - released Integrity Unit holonomic drift correction prototype
+- **v5.0** - planned future consolidation release
 
-The current repository posture is best described as:
+The repository contains historical Sentinel Vector code and the standalone v4.2 Integrity Unit holonomic drift correction prototype. The v4.1 implementation scaffold is distributed separately and is absent from this checkout.
 
-**Structurally consistent implementation scaffold with cooperative enforcement boundaries, now including a demonstrable Integrity Unit holonomic drift correction prototype.**
-
-This is more than a proof of concept, but it is not integration-ready, production-ready, adversarially hardened, cryptographically enforced, or hardware-isolated.
+The project is not integration-ready, production-ready, adversarially hardened, cryptographically enforced, or hardware-isolated.
 
 See [VERSION_HISTORY.md](VERSION_HISTORY.md) for the release lineage.
+
+## Approved v4.2 contract
+
+Joe Kasper approved the consolidated structural contract, including Clauses 15.1 through 15.6, on 15 September 2026.
+
+- [Final consolidated structural contract](Docs/contracts/Stability_Engine_v4_2_Consolidated_Structural_Contract.md)
+- [Conformance and implementation work](Docs/CONFORMANCE_v4_2.md)
+- [Requirement register](Docs/contracts/requirements_v4_2.csv)
+
+The contract preserves transaction-scoped Human Prime authority, separates audit evidence from agent recall, and keeps numerical convergence separate from execution permission. Approval of the contract does not certify runtime conformance. Clause 15.4 requires explicit numerical acceptance and failure-handling choices before integration; it does not select those choices.
+
+This checkout contains the v4.2 correction pair and historical Sentinel Vector code. The v4.1 scaffold referenced below is a separate release artifact and is not present in this repository tree. Its test results and runtime features must not be attributed to the legacy modules in this checkout.
 
 ## Architecture
 
@@ -39,15 +49,15 @@ Stability Engine defines four primary runtime layers:
 
 Three operational units are specified within the architecture:
 
-- **AdSim Unit** — applies controlled adversarial pressure
-- **Defense Unit** — enforces safe recovery and containment
-- **Integrity Unit** — validates invariant health, continuity authenticity, and structural correctness
+- **AdSim Unit** - applies controlled adversarial pressure
+- **Defense Unit** - enforces safe recovery and containment
+- **Integrity Unit** - validates invariant health, continuity authenticity, and structural correctness
 
 The v4.2 release begins moving the Integrity Unit from specification into runnable prototype code without claiming completion of the full unit.
 
 ## Supporting Runtime Layers
 
-The current implementation scaffold also includes:
+The separately packaged v4.1 implementation scaffold includes:
 
 - **TSRL-1** for continuous observation and evidence generation
 - **TSRL-2** for deterministic routing and attribution preservation
@@ -93,7 +103,9 @@ See the [v4.2 release documentation](releases/v4.2/SEv4.2_01_README.md) for the 
 
 ## Current Maturity
 
-### Implemented and runtime-path validated
+The following scaffold findings describe the v4.1 release artifact. The standalone v4.2 correction prototype is the current release implementation included in this checkout.
+
+### Reported release implementation scope
 
 - TSRL observation-routing-stability chain
 - QAMS attributed transport
@@ -131,29 +143,26 @@ See the [v4.2 release documentation](releases/v4.2/SEv4.2_01_README.md) for the 
 - defect descent
 - finite-state collapse enforcement
 
-## Running the Demo
+## Running the v4.2 prototype tests
 
-Requirements:
-
-- Python 3.11 or newer
-
-From the implementation scaffold root:
-
-```bash
-python -m simulation.run_demo
-```
-
-Run the existing scaffold tests:
-
-```bash
-python -m unittest discover tests -v
-```
-
-Run the canonical v4.2 prototype tests from the repository root:
+Use a Python environment with NumPy and pytest installed. From the repository root:
 
 ```bash
 python -m pytest releases/v4.2/test_integrity_unit_v4_2.py -v
 ```
+
+The published seven-case suite tests the standalone correction prototype. It is not an integrated containment test suite. Some invalid inputs raise exceptions; domain admissibility is checked at convergence. The full behavior and remaining acceptance-policy obligations are recorded in Sections 11, 14, and 15 of the approved contract.
+
+## Separate v4.1 demo artifact
+
+The v4.1 scaffold is not included in this checkout. After extracting its release archive, run these commands from the outer `sentinel_vector_demo` directory, preserving that directory name:
+
+```bash
+python -m simulation.run_demo
+python -m unittest discover -s tests -v
+```
+
+The 14 September 2026 review of that separate artifact passed 35 unit tests. The demo passed 5 of 6 scenarios: Scenario 5 attempts a Tier 1 write while still in cooldown, and the guard blocks it. These are historical artifact results, not a claim that this repository contains or passes that suite. Demo sequencing remains to be corrected without weakening the guard.
 
 ## Release Discipline
 

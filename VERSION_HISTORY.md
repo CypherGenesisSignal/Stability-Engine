@@ -118,6 +118,12 @@ Nothing crosses raw.
 
 v4.2 does not claim completion of the Integrity Unit, URIEL-3b integration, spectral admissibility, defect descent, finite-state collapse enforcement, adversarial hardening, integration readiness, or production readiness.
 
+## Approved v4.2 consolidated contract on 15 September 2026
+
+The [final structural contract](Docs/contracts/Stability_Engine_v4_2_Consolidated_Structural_Contract.md) records Joe Kasper's approval of Clauses 15.1 through 15.6. It consolidates the architecture and resolves the stated memory, geometry, evidence, and historical-stack interpretations while retaining explicit prerequisites for numerical integration.
+
+This is a contract and documentation update, not a new runtime release. The published files under `releases/v4.2/` remain unchanged. The [conformance register](Docs/CONFORMANCE_v4_2.md) distinguishes approved requirements from implementation evidence. The v4.1 scaffold referenced in this history is a separate release artifact and is absent from this checkout.
+
 ## v5.0 — Planned Consolidation Release
 
 v5.0 remains the future consolidation release and is reserved for the larger convergence drop.
