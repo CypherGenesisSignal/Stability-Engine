@@ -13,7 +13,7 @@ The current public implementation line is:
 - **v4.2** - released Integrity Unit holonomic drift correction prototype
 - **v5.0** - planned future consolidation release
 
-The repository contains historical Sentinel Vector code and the standalone v4.2 Integrity Unit holonomic drift correction prototype. The v4.1 implementation scaffold is distributed separately and is absent from this checkout.
+The repository contains historical Sentinel Vector code, the standalone v4.2 Integrity Unit correction prototype, and a working copy of the latest v4.1 runtime scaffold with bounded v4.2 contract enforcement changes under `runtime/sentinel_vector_demo`.
 
 The project is not integration-ready, production-ready, adversarially hardened, cryptographically enforced, or hardware-isolated.
 
@@ -29,7 +29,7 @@ Joe Kasper approved the consolidated structural contract, including Clauses 15.1
 
 The contract preserves transaction-scoped Human Prime authority, separates audit evidence from agent recall, and keeps numerical convergence separate from execution permission. Approval of the contract does not certify runtime conformance. Clause 15.4 requires explicit numerical acceptance and failure-handling choices before integration; it does not select those choices.
 
-This checkout contains the v4.2 correction pair and historical Sentinel Vector code. The v4.1 scaffold referenced below is a separate release artifact and is not present in this repository tree. Its test results and runtime features must not be attributed to the legacy modules in this checkout.
+Joe confirmed the uploaded v4.1 scaffold as the latest runtime. Its working copy and source provenance are now included under `runtime/`. The historical release files remain unchanged. See the conformance document for implemented changes and open integration work.
 
 ## Architecture
 
@@ -57,7 +57,7 @@ The v4.2 release begins moving the Integrity Unit from specification into runnab
 
 ## Supporting Runtime Layers
 
-The separately packaged v4.1 implementation scaffold includes:
+The imported v4.1 implementation scaffold includes:
 
 - **TSRL-1** for continuous observation and evidence generation
 - **TSRL-2** for deterministic routing and attribution preservation
@@ -103,7 +103,7 @@ See the [v4.2 release documentation](releases/v4.2/SEv4.2_01_README.md) for the 
 
 ## Current Maturity
 
-The following scaffold findings describe the v4.1 release artifact. The standalone v4.2 correction prototype is the current release implementation included in this checkout.
+The findings below describe the inherited release scope. The working runtime now rejects symbolic Tier 2 authorization, requires explicit memory direction, fixes geometry binding per instance, and separates operational evidence from agent memory. See [runtime notes](runtime/sentinel_vector_demo/README.md) for precise behavior and remaining gaps.
 
 ### Reported release implementation scope
 
@@ -121,10 +121,10 @@ The following scaffold findings describe the v4.1 release artifact. The standalo
 
 ### Still soft, mocked, or incomplete
 
-- Human Prime verification remains symbolic
+- Authenticated Human Prime verification is not implemented; T2 access now fails closed
 - geometry, persistent memory, and Presence Engine backends remain mocked
 - Python-level immutability is not hard runtime immutability
-- some Phase 2 memory enforcement retains fallback behavior
+- positive T2 transactions and sanitized T2 metadata integration remain unavailable
 - memory bleed detection assumes cooperative API usage
 - Control Plane statelessness remains unresolved
 - full dynamic envelope narrowing remains incomplete
@@ -153,16 +153,18 @@ python -m pytest releases/v4.2/test_integrity_unit_v4_2.py -v
 
 The published seven-case suite tests the standalone correction prototype. It is not an integrated containment test suite. Some invalid inputs raise exceptions; domain admissibility is checked at convergence. The full behavior and remaining acceptance-policy obligations are recorded in Sections 11, 14, and 15 of the approved contract.
 
-## Separate v4.1 demo artifact
+## Running the working runtime
 
-The v4.1 scaffold is not included in this checkout. After extracting its release archive, run these commands from the outer `sentinel_vector_demo` directory, preserving that directory name:
+From `runtime/sentinel_vector_demo`, using Python 3.11 or newer:
 
 ```bash
-python -m simulation.run_demo
 python -m unittest discover -s tests -v
+python -m simulation.run_demo
 ```
 
-The 14 September 2026 review of that separate artifact passed 35 unit tests. The demo passed 5 of 6 scenarios: Scenario 5 attempts a Tier 1 write while still in cooldown, and the guard blocks it. These are historical artifact results, not a claim that this repository contains or passes that suite. Demo sequencing remains to be corrected without weakening the guard.
+The modified scaffold passes 51 tests and all 6 demo scenarios on Python 3.12.14. It uses the standard library. Keep its directory name intact for inherited package imports. These tests establish bounded API behavior, not full containment. The separate v4.2 solver has not been integrated into execution.
+
+Tier 2 access is disabled until authenticated, scoped authorization and the required metadata integration are implemented. Geometry collaborator activation, durable audit policy, and numerical acceptance choices remain open under Section 15.
 
 ## Release Discipline
 

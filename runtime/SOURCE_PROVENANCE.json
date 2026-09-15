@@ -1,0 +1,153 @@
+{
+  "source": "SEv4.1.zip / Stability_Engine_v4.1_demo.zip / outer sentinel_vector_demo",
+  "source_archive_sha256": "d5f091e3692318a47d86dfa53038178109fda7e0a64f933a87302022b013f3f9",
+  "confirmation": "Joe Kasper confirmed uploaded v4.1 as latest runtime on 15 September 2026.",
+  "scope": "Working runtime copy; no historical release or nested duplicate imported. Bytecode and generated audit exports excluded.",
+  "files": [
+    {
+      "path": "README.md",
+      "source_sha256": "60708070cd71ae1ba9b31868251d290af06853f927df94e03cc0fc9811759909",
+      "working_sha256": "7011357e5031bc1ab23fc73c7efe9be76296ff5a333006fcf835081623a39409"
+    },
+    {
+      "path": "adapters/__init__.py",
+      "source_sha256": "26b680241d8e4ef9a7a67deed3646a05c4de4b0b0f4c3cdfa99124c4ad22ac72",
+      "working_sha256": "26b680241d8e4ef9a7a67deed3646a05c4de4b0b0f4c3cdfa99124c4ad22ac72"
+    },
+    {
+      "path": "adapters/geometry_coprocessor.py",
+      "source_sha256": "3941f3d29b7d25a0fa23b2b457234a2991b084273d0232d47d4e1824da553934",
+      "working_sha256": "3941f3d29b7d25a0fa23b2b457234a2991b084273d0232d47d4e1824da553934"
+    },
+    {
+      "path": "adapters/persistent_memory.py",
+      "source_sha256": "d8184e019b8ddb5c46371a5a8cd03e091b6c850d4b874e203d8a31f05f50307a",
+      "working_sha256": "d8184e019b8ddb5c46371a5a8cd03e091b6c850d4b874e203d8a31f05f50307a"
+    },
+    {
+      "path": "adapters/presence_engine.py",
+      "source_sha256": "a5c569a2343dfabb8a6656ce3df57eaf1f0a888f6bdc3de3c7d0411bd12c96f4",
+      "working_sha256": "a5c569a2343dfabb8a6656ce3df57eaf1f0a888f6bdc3de3c7d0411bd12c96f4"
+    },
+    {
+      "path": "core/__init__.py",
+      "source_sha256": "6a48702e33ae66f41893df220556ec0dc3c8a4284bf7c48fbef54cc6989643d9",
+      "working_sha256": "6a48702e33ae66f41893df220556ec0dc3c8a4284bf7c48fbef54cc6989643d9"
+    },
+    {
+      "path": "core/audit_log.py",
+      "source_sha256": "a374e7f4df4d5c5c53bfcffda70b57145370289b48839233947750adb8319dff",
+      "working_sha256": "749d63b5f4a2668f70ac2349ac7286c38c4f5431e0224b0bef78080607b34b4e"
+    },
+    {
+      "path": "core/control_plane.py",
+      "source_sha256": "d9f81e43f2eacc2f632bfdc4425c330fae2d1a82dee5e3087f3fb5d0422bfd7e",
+      "working_sha256": "eaed09e707f1c5b19a5b7299e3a5b0d5aacf1d71965df431b1c370064e9cd0b5"
+    },
+    {
+      "path": "core/interposer.py",
+      "source_sha256": "35ef39b8bde5778ef83ebaa2ec0d9b43c1cacc1dece887cba28cd02dc7676016",
+      "working_sha256": "8bdb0d342f64099f78686ba69ac4503c7165688a7e2272aef2ac4a3babad05cf"
+    },
+    {
+      "path": "core/qams.py",
+      "source_sha256": "0291e0ddd879b82822d9ba504e0f6bc93d6985adf6b078a3f30484f75819a52d",
+      "working_sha256": "0291e0ddd879b82822d9ba504e0f6bc93d6985adf6b078a3f30484f75819a52d"
+    },
+    {
+      "path": "core/stability_metrics.py",
+      "source_sha256": "b48450efa76ba2487df8661c07dbacbd7d10341b8a82ba53c62d3ab6c9b24b97",
+      "working_sha256": "b48450efa76ba2487df8661c07dbacbd7d10341b8a82ba53c62d3ab6c9b24b97"
+    },
+    {
+      "path": "core/types.py",
+      "source_sha256": "f47817f9fe3898b1828aa73646af38e0664245181e265e6341eb80e40de152fb",
+      "working_sha256": "f47817f9fe3898b1828aa73646af38e0664245181e265e6341eb80e40de152fb"
+    },
+    {
+      "path": "mocks/__init__.py",
+      "source_sha256": "3ca133c4f807806e89caa23836a8aeb04db55a6d3930a2c89fab6d1a23b96e65",
+      "working_sha256": "3ca133c4f807806e89caa23836a8aeb04db55a6d3930a2c89fab6d1a23b96e65"
+    },
+    {
+      "path": "mocks/mock_geometry_coprocessor.py",
+      "source_sha256": "47d129159cf49a0a6fcd62da7ad81d23bc49b606d121061e9f09339f5d93e75d",
+      "working_sha256": "47d129159cf49a0a6fcd62da7ad81d23bc49b606d121061e9f09339f5d93e75d"
+    },
+    {
+      "path": "mocks/mock_persistent_memory.py",
+      "source_sha256": "8cb316a3b0106db2413adf3b4beda2fea62204a6b3328f6102f053d518045447",
+      "working_sha256": "f287812e4864d93fb2ba4e18e924d01d178113e0acafeac013348e39fa2a4b18"
+    },
+    {
+      "path": "mocks/mock_presence_engine.py",
+      "source_sha256": "887dbd06cb33cec7ad6ff2ccc1b8f21816befa5c461237d131bb949eba1bbe53",
+      "working_sha256": "887dbd06cb33cec7ad6ff2ccc1b8f21816befa5c461237d131bb949eba1bbe53"
+    },
+    {
+      "path": "orchestration/__init__.py",
+      "source_sha256": "773956acaf2678efaefe694f383276bd774869a76fa720c95ede05b8c9c56dce",
+      "working_sha256": "773956acaf2678efaefe694f383276bd774869a76fa720c95ede05b8c9c56dce"
+    },
+    {
+      "path": "orchestration/purple_orchestrator.py",
+      "source_sha256": "4a2ccc1a4ecff5b7c6f727d09cbe29394b2139c7318003c149d7c42adce3fc03",
+      "working_sha256": "2dd478310a7d55d7661df0a29a27b67661f73f65bc7e411ebbd6b4a4ffe5a17e"
+    },
+    {
+      "path": "simulation/__init__.py",
+      "source_sha256": "f0fecf2b040c5a84f2f6ab47f51ca64454b792d400f772cb5d9a4f0e0e5c1c64",
+      "working_sha256": "f0fecf2b040c5a84f2f6ab47f51ca64454b792d400f772cb5d9a4f0e0e5c1c64"
+    },
+    {
+      "path": "simulation/run_demo.py",
+      "source_sha256": "9cd6c28fba77a8f5c8859be903099dec709d5713ac97a2cf845835f963c9be40",
+      "working_sha256": "3eb3e6b653fce45de1558e7c8c8c11198b860d299c366695dd5ec30e91fcb63e"
+    },
+    {
+      "path": "tests/__init__.py",
+      "source_sha256": "fb54971f8902d67b86aa4054ffdfa99f18e3748a3bb300a0f5f63541d2e52c98",
+      "working_sha256": "fb54971f8902d67b86aa4054ffdfa99f18e3748a3bb300a0f5f63541d2e52c98"
+    },
+    {
+      "path": "tests/test_memory_boundaries.py",
+      "source_sha256": "46c8f7d3dcf83c76c824ae71f33b923fa10d0ecc3dafa7d9a9be2024bd496be7",
+      "working_sha256": "3dc5d42799f693f288dc43c09c1a3d36b144b3d0db965e3fbead25444b050aa3"
+    },
+    {
+      "path": "tests/test_qams_traceability.py",
+      "source_sha256": "10a9dbfc3e77b5e77628238ec4959028a55e88a3de3a90bf9028bd29f96ffa2c",
+      "working_sha256": "10a9dbfc3e77b5e77628238ec4959028a55e88a3de3a90bf9028bd29f96ffa2c"
+    },
+    {
+      "path": "tests/test_refusals.py",
+      "source_sha256": "0890f12cd7b6c914638f1f71cacf88063dd57d8248ce1d2d695f0e6bd50f50a7",
+      "working_sha256": "70080fb66b3eedf78536f253a5beb5656817d9328dab59a6dfbf5828be28784d"
+    },
+    {
+      "path": "tests/test_runtime_enforcement.py",
+      "source_sha256": "4737c2d4e86ed37bfac13bd827fa2f84e92e0e876e9890831df4c6ab81d91659",
+      "working_sha256": "bba7ebc8078d56ab54629cbbc31acf87fe7b92e9fbe6b201d0a30cd0b56b698e"
+    },
+    {
+      "path": "tsrl/__init__.py",
+      "source_sha256": "0d6e4f9f3b10c50696056eb5cbf5850910eac3c34118fea3177465c9c8d67ebc",
+      "working_sha256": "0d6e4f9f3b10c50696056eb5cbf5850910eac3c34118fea3177465c9c8d67ebc"
+    },
+    {
+      "path": "tsrl/tsrl1_observation.py",
+      "source_sha256": "63f54e775c365711a5b80a01d8327c2eef41fb07e01d511de5109ef4ec9e1e08",
+      "working_sha256": "63f54e775c365711a5b80a01d8327c2eef41fb07e01d511de5109ef4ec9e1e08"
+    },
+    {
+      "path": "tsrl/tsrl2_routing.py",
+      "source_sha256": "b466ea52a61fa9d4d453876d396eef2970ab04e928287c669d0ab7cc5b15b157",
+      "working_sha256": "b466ea52a61fa9d4d453876d396eef2970ab04e928287c669d0ab7cc5b15b157"
+    },
+    {
+      "path": "tsrl/tsrl3_stability.py",
+      "source_sha256": "a89c3f3137684321d0e4c862f6ed1261666b59ade4969df40cb570768a3eecce",
+      "working_sha256": "a89c3f3137684321d0e4c862f6ed1261666b59ade4969df40cb570768a3eecce"
+    }
+  ]
+}

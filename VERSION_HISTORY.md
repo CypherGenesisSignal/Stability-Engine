@@ -122,7 +122,9 @@ v4.2 does not claim completion of the Integrity Unit, URIEL-3b integration, spec
 
 The [final structural contract](Docs/contracts/Stability_Engine_v4_2_Consolidated_Structural_Contract.md) records Joe Kasper's approval of Clauses 15.1 through 15.6. It consolidates the architecture and resolves the stated memory, geometry, evidence, and historical-stack interpretations while retaining explicit prerequisites for numerical integration.
 
-This is a contract and documentation update, not a new runtime release. The published files under `releases/v4.2/` remain unchanged. The [conformance register](Docs/CONFORMANCE_v4_2.md) distinguishes approved requirements from implementation evidence. The v4.1 scaffold referenced in this history is a separate release artifact and is absent from this checkout.
+The approved runtime baseline was subsequently confirmed as the uploaded v4.1 scaffold. A working copy is included under `runtime/sentinel_vector_demo` with source fingerprints. It adds explicit memory direction, rejects symbolic T2 authorization, prevents geometry rebinding, separates evidence from agent memory, and protects nested audit/memory values against caller mutation. This is a bounded working implementation increment, not a new published release or a v5 reorganization.
+
+The working scaffold passes 51 tests and its six demo scenarios. The seven canonical v4.2 solver tests also pass separately; the published correction pair remains unchanged and is not integrated into execution. The [conformance register](Docs/CONFORMANCE_v4_2.md) identifies remaining authority, audit-policy, collaborator, and numerical-integration work.
 
 ## v5.0 — Planned Consolidation Release
 

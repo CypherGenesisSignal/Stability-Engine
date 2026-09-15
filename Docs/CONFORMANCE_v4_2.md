@@ -1,44 +1,62 @@
 # Stability Engine v4.2 conformance and implementation work
 
-Joe Kasper approved the [consolidated structural contract](contracts/Stability_Engine_v4_2_Consolidated_Structural_Contract.md), including Clauses 15.1 through 15.6, on 15 September 2026. Approval establishes the requirements. Runtime conformance remains an engineering and verification obligation.
+Joe Kasper approved the [consolidated structural contract](contracts/Stability_Engine_v4_2_Consolidated_Structural_Contract.md), including Clauses 15.1 through 15.6. On 15 September 2026 he confirmed that the uploaded v4.1 scaffold is the latest runtime. Approval establishes requirements, not runtime certification.
 
-## Repository baseline
+## Source and working location
 
-This assessment uses `main` at `d258766c1d81d8b95fea3f9953a51d9dc445c8e9`. The tree contains historical Sentinel Vector modules and the canonical correction pair under `releases/v4.2/`. It does not contain the v4.1 `sentinel_vector_demo` scaffold, its Interposer or Control Plane implementation, or its 35-test suite. No `AGENTS.md` or CI workflow is present in that baseline tree.
+The original repository baseline is `d258766c1d81d8b95fea3f9953a51d9dc445c8e9`. It contains historical Sentinel Vector code and the standalone pair under `releases/v4.2/`, but no v4.1 scaffold or test suite. This PR adds the confirmed outer v4.1 scaffold as a working copy under [runtime/sentinel_vector_demo](../runtime/sentinel_vector_demo/README.md). This is an additive import, not a v5 repository reorganization.
 
-The contract records a separate review of uploaded v4.1 and v4.2 release artifacts. Its 35-test scaffold result must not be represented as a result from this checkout. Its Appendix B scaffold commands require that separately extracted artifact.
+[Source provenance](../runtime/SOURCE_PROVENANCE.json) records the uploaded archive hash and original/working hashes for every imported source file. The nested duplicate, generated evidence files, and bytecode are excluded. The published v4.2 correction pair is unchanged.
 
-The Markdown contract transcribes the approved final document. Its approval record, source fingerprints, maturity qualifications, and historical test dates are retained. The Pages copy uses the date line Joe Kasper | 15 September 2026, which is preserved here.
+The Markdown contract transcribes the approved final document, including its historical evidence and date line. Its September 14 test results describe the supplied archives. The results below describe the modified working runtime and do not rewrite that history.
 
 ## Approved clause disposition
 
-| Clause | Approved rule or obligation | Implementation status and next evidence |
+| Clause | Implemented in this working copy | Still open |
 | --- | --- | --- |
-| 15.1 | Deny autonomous upward promotion; permit only separately authorized, Interposer-mediated Tier 2 transactions. Block raw T0/T2 exchange both ways. | OPEN MEMORY: establish the working scaffold and explicit requester/source/destination schema. Test transaction scope, replay or reuse, cross-agent access, both raw-read directions, and allowed sanitized reads. Approval alone is not a signature verifier. |
-| 15.2 | Separate fixed geometry rules, private collaborator computation, and committed state. | OPEN GEOMETRY: agree configuration activation and allowed backend transitions with the collaborator. Demonstrate that correction and recovery cannot mutate rules or bypass the Interposer. |
-| 15.3 | Preserve audit evidence without creating an agent recall channel or a fourth memory tier. | OPEN AUDIT: authorize record schema, retention authority, access policy, lifetime, and storage placement. Test evidence retention across resets and denial of unauthorized agent recall. |
-| 15.4 | Specify numerical acceptance, domain-check timing, exception normalization, callback limits, and final-iteration acceptance before integration. | OPEN NUMERICS: the alternatives remain to be selected explicitly. The released prototype is preserved. Do not silently choose a singular-metric policy, endpoint-only policy, timeout, or budget rule. |
-| 15.5 | Keep historical layer maps distinct; preserve naming and R = 4 provenance without an unproved universal guarantee. | DOCUMENTED: contract Section 10 preserves both maps and their boundaries. Historical releases remain intact. No repository-wide renaming or v5 reorganization is included. |
-| 15.6 | Trace requirements and require evidence before conformance or hardening claims. | REGISTERED, NOT CERTIFIED: the requirement register links each normative paragraph to its clause and an open conformance record. Runtime evidence must be attached before any record is closed. |
+| 15.1 | Explicit requester/data-source/data-destination schema; both raw T0/T2 directions refused; upward writes refused; symbolic T2 tokens rejected; missing/invalid tiers refused. Local store and recall snapshots prevent nested-reference mutation; mock recall filters actors. | Positive T2 authorization, authenticated requester identity, scoped execution, expiration/replay control, and sanitized T2-to-T1 metadata integration. T2 is disabled until these exist. |
+| 15.2 | Geometry adapter can be bound once; ordinary rebinding and unsealing assignments fail. Nested restricted keys are sanitized. Missing or unsuccessful geometry gates cannot return execution success. | Collaborator agreement on configuration activation and backend transitions; full payload allowlist; hostile same-process protection. No collaborator integration added. |
+| 15.3 | Existing in-process AuditLog takes and returns detached snapshots. Orchestrator records its events there, stops automatically copying evidence into agent memory, and stops returning cross-request execution history. Generic adapter dispatch rejects memory/audit exports. | Authorized durable record schema, retention authority/lifetime, access control, and storage placement. No new persistence layer or authority is introduced. Operator objects remain trusted Python interfaces. |
+| 15.4 | Solver remains standalone, with no new execution/commit path. | Numerical acceptance alternatives, domain timing, exception normalization, callback limits, final-iteration acceptance. None selected implicitly. |
+| 15.5 | Contract preserves distinct historical maps, naming, and R = 4 provenance. Import provenance identifies the scaffold. | No universal mathematical guarantee or repository-wide renaming claimed. |
+| 15.6 | Requirement register links affected clauses to partial implementation/test evidence and leaves unresolved requirements open. | Full conformance review, authenticated enforcement, hostile audit, production hardening. |
 
-## Requirement register
+## Test evidence
 
-[requirements_v4_2.csv](contracts/requirements_v4_2.csv) records every contract paragraph containing uppercase MUST, including MUST NOT. A record retains the full paragraph, which can contain multiple obligations. Clause numbers remain the authoritative identifiers; REQ numbers are register keys only.
+Run from `runtime/sentinel_vector_demo`:
 
-OPEN means the paragraph has not received a complete conformance determination. It does not mean every behavior in it is absent. An existing test may support part of a paragraph without demonstrating its full authority boundary. Each record must eventually link to implementation and meaningful tests or a tracked open issue. The open work groups above provide the initial disposition; they are not GitHub issue numbers.
+```bash
+python -m unittest discover -s tests -v
+python -m simulation.run_demo
+```
 
-## Validation performed for this repository update
+On 15 September 2026, Python 3.12.14 ran **51 scaffold tests successfully**, including 16 new contract regression tests. The 35 inherited tests were retained, with explicit memory schemas added to fixtures and two old symbolic-T2-success expectations changed to refusals. Those expectation changes follow the contract's requirement that a claim of approval is not approval.
 
-The repository copy of the canonical v4.2 suite passed 7 tests on 15 September 2026 with Python 3.12.14, NumPy 2.3.5, and pytest 9.1.1. The command was run from the repository root:
+The six-scenario demo now passes **6/6**. Its recovery scenario creates a fresh fixture rather than resetting a cooled-down runtime; the Tier 1 cooldown guard remains enforced. Its T2 token example now expects refusal.
+
+From the repository root:
 
 ```bash
 python -m pytest releases/v4.2/test_integrity_unit_v4_2.py -v
 ```
 
-This validates the existing prototype cases only. No runtime code changes accompany this contract import. The v4.1 scaffold tests were not rerun as repository tests because their source tree is absent. Its previously observed demo sequencing failure remains open.
+The unchanged v4.2 suite passes **7/7** with NumPy 2.3.5 and pytest 9.1.1. This is a separate standalone solver suite, not a 58-test integrated containment certification.
 
-## Runtime implementation dependency
+## Regression mapping
 
-The next runtime change requires an agreed working location for the v4.1 scaffold or confirmation of a newer implementation branch. Once that source is established, apply the settled contract requirements there and verify the enforcement paths. Preserve the published v4.2 correction pair as release provenance. Resolve the numerical choices in 15.4 and collaborator details in 15.2 before integrating correction into execution.
+All tests below are in `runtime/sentinel_vector_demo/tests/test_contract_v4_2.py`.
 
-The historical agent and export modules in this repository must not be relabeled as an implementation of the approved Interposer, memory-tier, or audit contracts without tracing and testing their actual behavior.
+| Boundary | Test methods |
+| --- | --- |
+| Explicit memory schema and directional refusal | `test_missing_invalid_or_conflicting_schema_refused`, `test_raw_t0_t2_both_directions_and_operations`, `test_upward_write_denied_despite_benign_action`, `test_local_explicit_read_and_write_remain_allowed` |
+| No symbolic authority | `test_symbolic_authority_cannot_grant_or_be_reused`, `test_mock_symbolic_token_never_creates_t2_data` |
+| Fixed geometry binding and sanitization | `test_geometry_cannot_be_rebound_or_unsealed_via_normal_assignment`, `test_nested_geometry_sanitization_does_not_mutate_input` |
+| Missing gates and geometry failure | `test_adapter_gate_denies_memory_audit_unknown_and_missing_gate`, `test_geometry_refusal_and_malformed_result_cannot_be_success`, `test_missing_geometry_gate_cannot_be_success` |
+| Evidence separation and reference safety | `test_audit_snapshots_survive_caller_mutation_and_tier_cleanup`, `test_runtime_evidence_not_written_to_agent_memory_or_returned_as_history`, `test_tier_freeze_cannot_be_bypassed_through_nested_aliases` |
+| Mock memory isolation and validation | `test_mock_recall_isolated_and_detached`, `test_mock_rejects_invalid_tier_instead_of_defaulting` |
+
+## Requirement register and limits
+
+[requirements_v4_2.csv](contracts/requirements_v4_2.csv) records all 83 contract paragraphs containing uppercase MUST, including MUST NOT. A paragraph may contain multiple obligations. OPEN means no complete conformance determination; PARTIAL means specific related API behavior has evidence while broader obligations remain unresolved. Neither status certifies the paragraph.
+
+The current runtime remains cooperative Python code. Attribute reflection, direct internal access, trusted caller labels, Control Plane state ownership, complete agent-tool isolation, dynamic envelope narrowing, and collaborator backends are unresolved. The tests do not establish authenticated Human Prime authority, replay-safe transactions, a production audit store, or non-bypassable process isolation.
