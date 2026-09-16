@@ -8,18 +8,28 @@ Stability Engine is a deterministic runtime-constraint architecture for multi-ag
 
 The current public implementation line is:
 
-- **v4.0** — contract-defined architecture and runnable demo baseline
-- **v4.1** — hostile-audited structural baseline with critical runtime-path remediation
-- **v4.2** — released Integrity Unit holonomic drift correction prototype
-- **v5.0** — planned future consolidation release
+- **v4.0** - contract-defined architecture and runnable demo baseline
+- **v4.1** - hostile-audited structural baseline with critical runtime-path remediation
+- **v4.2** - released Integrity Unit holonomic drift correction prototype
+- **v5.0** - planned future consolidation release
 
-The current repository posture is best described as:
+The repository contains historical Sentinel Vector code, the standalone v4.2 Integrity Unit correction prototype, and a working copy of the latest v4.1 runtime scaffold with bounded v4.2 contract enforcement changes under `runtime/sentinel_vector_demo`.
 
-**Structurally consistent implementation scaffold with cooperative enforcement boundaries, now including a demonstrable Integrity Unit holonomic drift correction prototype.**
-
-This is more than a proof of concept, but it is not integration-ready, production-ready, adversarially hardened, cryptographically enforced, or hardware-isolated.
+The project is not integration-ready, production-ready, adversarially hardened, cryptographically enforced, or hardware-isolated.
 
 See [VERSION_HISTORY.md](VERSION_HISTORY.md) for the release lineage.
+
+## Approved v4.2 contract
+
+Joe Kasper approved the consolidated structural contract, including Clauses 15.1 through 15.6, on 15 September 2026.
+
+- [Final consolidated structural contract](Docs/contracts/Stability_Engine_v4_2_Consolidated_Structural_Contract.md)
+- [Conformance and implementation work](Docs/CONFORMANCE_v4_2.md)
+- [Requirement register](Docs/contracts/requirements_v4_2.csv)
+
+The contract preserves transaction-scoped Human Prime authority, separates audit evidence from agent recall, and keeps numerical convergence separate from execution permission. Approval of the contract does not certify runtime conformance. Clause 15.4 requires explicit numerical acceptance and failure-handling choices before integration; it does not select those choices.
+
+Joe confirmed the uploaded v4.1 scaffold as the latest runtime. Its working copy and source provenance are now included under `runtime/`. The historical release files remain unchanged. See the conformance document for implemented changes and open integration work.
 
 ## Architecture
 
@@ -39,15 +49,15 @@ Stability Engine defines four primary runtime layers:
 
 Three operational units are specified within the architecture:
 
-- **AdSim Unit** — applies controlled adversarial pressure
-- **Defense Unit** — enforces safe recovery and containment
-- **Integrity Unit** — validates invariant health, continuity authenticity, and structural correctness
+- **AdSim Unit** - applies controlled adversarial pressure
+- **Defense Unit** - enforces safe recovery and containment
+- **Integrity Unit** - validates invariant health, continuity authenticity, and structural correctness
 
 The v4.2 release begins moving the Integrity Unit from specification into runnable prototype code without claiming completion of the full unit.
 
 ## Supporting Runtime Layers
 
-The current implementation scaffold also includes:
+The imported v4.1 implementation scaffold includes:
 
 - **TSRL-1** for continuous observation and evidence generation
 - **TSRL-2** for deterministic routing and attribution preservation
@@ -93,7 +103,9 @@ See the [v4.2 release documentation](releases/v4.2/SEv4.2_01_README.md) for the 
 
 ## Current Maturity
 
-### Implemented and runtime-path validated
+The findings below describe the inherited release scope. The working runtime now rejects symbolic Tier 2 authorization, requires explicit memory direction, fixes geometry binding per instance, and separates operational evidence from agent memory. See [runtime notes](runtime/sentinel_vector_demo/README.md) for precise behavior and remaining gaps.
+
+### Reported release implementation scope
 
 - TSRL observation-routing-stability chain
 - QAMS attributed transport
@@ -109,10 +121,10 @@ See the [v4.2 release documentation](releases/v4.2/SEv4.2_01_README.md) for the 
 
 ### Still soft, mocked, or incomplete
 
-- Human Prime verification remains symbolic
+- Authenticated Human Prime verification is not implemented; T2 access now fails closed
 - geometry, persistent memory, and Presence Engine backends remain mocked
 - Python-level immutability is not hard runtime immutability
-- some Phase 2 memory enforcement retains fallback behavior
+- positive T2 transactions and sanitized T2 metadata integration remain unavailable
 - memory bleed detection assumes cooperative API usage
 - Control Plane statelessness remains unresolved
 - full dynamic envelope narrowing remains incomplete
@@ -131,29 +143,28 @@ See the [v4.2 release documentation](releases/v4.2/SEv4.2_01_README.md) for the 
 - defect descent
 - finite-state collapse enforcement
 
-## Running the Demo
+## Running the v4.2 prototype tests
 
-Requirements:
-
-- Python 3.11 or newer
-
-From the implementation scaffold root:
-
-```bash
-python -m simulation.run_demo
-```
-
-Run the existing scaffold tests:
-
-```bash
-python -m unittest discover tests -v
-```
-
-Run the canonical v4.2 prototype tests from the repository root:
+Use a Python environment with NumPy and pytest installed. From the repository root:
 
 ```bash
 python -m pytest releases/v4.2/test_integrity_unit_v4_2.py -v
 ```
+
+The published seven-case suite tests the standalone correction prototype. It is not an integrated containment test suite. Some invalid inputs raise exceptions; domain admissibility is checked at convergence. The full behavior and remaining acceptance-policy obligations are recorded in Sections 11, 14, and 15 of the approved contract.
+
+## Running the working runtime
+
+From `runtime/sentinel_vector_demo`, using Python 3.11 or newer:
+
+```bash
+python -m unittest discover -s tests -v
+python -m simulation.run_demo
+```
+
+The modified scaffold passes 51 tests and all 6 demo scenarios on Python 3.12.14. It uses the standard library. Keep its directory name intact for inherited package imports. These tests establish bounded API behavior, not full containment. The separate v4.2 solver has not been integrated into execution.
+
+Tier 2 access is disabled until authenticated, scoped authorization and the required metadata integration are implemented. Geometry collaborator activation, durable audit policy, and numerical acceptance choices remain open under Section 15.
 
 ## Release Discipline
 

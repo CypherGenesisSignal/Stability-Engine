@@ -118,6 +118,14 @@ Nothing crosses raw.
 
 v4.2 does not claim completion of the Integrity Unit, URIEL-3b integration, spectral admissibility, defect descent, finite-state collapse enforcement, adversarial hardening, integration readiness, or production readiness.
 
+## Approved v4.2 consolidated contract on 15 September 2026
+
+The [final structural contract](Docs/contracts/Stability_Engine_v4_2_Consolidated_Structural_Contract.md) records Joe Kasper's approval of Clauses 15.1 through 15.6. It consolidates the architecture and resolves the stated memory, geometry, evidence, and historical-stack interpretations while retaining explicit prerequisites for numerical integration.
+
+The approved runtime baseline was subsequently confirmed as the uploaded v4.1 scaffold. A working copy is included under `runtime/sentinel_vector_demo` with source fingerprints. It adds explicit memory direction, rejects symbolic T2 authorization, prevents geometry rebinding, separates evidence from agent memory, and protects nested audit/memory values against caller mutation. This is a bounded working implementation increment, not a new published release or a v5 reorganization.
+
+The working scaffold passes 51 tests and its six demo scenarios. The seven canonical v4.2 solver tests also pass separately; the published correction pair remains unchanged and is not integrated into execution. The [conformance register](Docs/CONFORMANCE_v4_2.md) identifies remaining authority, audit-policy, collaborator, and numerical-integration work.
+
 ## v5.0 — Planned Consolidation Release
 
 v5.0 remains the future consolidation release and is reserved for the larger convergence drop.
